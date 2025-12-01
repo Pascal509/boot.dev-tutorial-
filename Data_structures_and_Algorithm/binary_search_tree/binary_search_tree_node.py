@@ -90,6 +90,35 @@ def build_tree(elements):
 
         return root
 
+def delete(self, val):
+    if self.val is None:
+        return None
+
+    if val < self.val:
+        if self.left:
+            self.left = self.left.delete(val)
+        return self
+    if val > self.val:
+        if self.right:
+            self.right = self.right.delete(val)
+        return self
+    
+    if val == self.val:
+        if self.right is None:
+            return self.left
+        
+        if self.left is None:
+            return self.right
+        
+        successor = self.right
+
+        while successor.left is not None:
+            successor = self.left
+        self.val = successor.val
+        self.right = self.right.delete(sucessor.val)
+
+        return self
+            
 if __name__ == '__main__':
     numbers = [17, 4, 1, 20, 9, 23, 18, 34]
 
@@ -103,7 +132,7 @@ if __name__ == '__main__':
     print("In order traversal:", numbers_tree.in_order_traversal())
     print("Pre order traversal:", numbers_tree.pre_order_traversal())
     print("Post order traversal:", numbers_tree.post_order_traversal())
-    
+
     # countries = ["India", "Pakistan", "Germany", "USA", "China", "UK", "USA"]
     # country_tree = build_tree(countries)
 
