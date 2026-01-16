@@ -75,3 +75,28 @@ int can_access_registry(int is_premium, int reputation, int has_2fa) {
   }
   return 0;
 }
+
+//for loops
+void print_numbers(int start, int end) {
+  for (int i = start; i <= end; i++) {
+    printf("%d\n", i);
+  }
+}
+
+//while loops
+
+void print_numbers_reverse(int start, int end) {
+  while(start >= end) {
+    printf("%d\n", start);
+    start--;
+  }
+}
+
+//The do while loop guarantees that the loop body is executed at least once,
+// even if the condition is false initially.
+void print_numbers_reverse(int start, int end) {
+  do {
+    printf("%d\n", start);
+    start--;
+  } while (start >= end);
+}
