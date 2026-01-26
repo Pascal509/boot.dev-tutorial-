@@ -3,7 +3,7 @@
 
 int main() {
     // malloc() = a function in C that dynamically allocates a specified number 
-    // of bytes in memory on the heap and returns a pointer to the allocated memory.
+    // of bytes in memory on the heap and returns a pointer to the allocated memory.vi
 
     int size = 0;
     printf("These are my grades: ");
